@@ -89,7 +89,7 @@ export default function Home() {
       {/**Intro & Value Statement section */}
       <div className="max-w-7xl mx-auto pb-18 px-5 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-16 sm:mt-20 lg:mt-30 gap-10 lg:gap-0">
-          <div className="px-0 lg:px-8">
+          <div className="px-0 lg:px-8 max-sm:hidden">
             <Image src={intro} alt="corporate office pic" className="rounded-2xl z-1 shadow-md w-full h-[350px] sm:h-[450px] lg:h-120 object-cover" />
           </div>
           <div className="px-0 lg:px-6">
@@ -157,7 +157,7 @@ export default function Home() {
             <div className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
               <div className="bg-skyblue text-navy p-2 w-fit rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1-4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1-4.5 0Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
                 </svg>
               </div>
               <div>
@@ -346,7 +346,7 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <div className="flex items-center justify-center px-5 py-16">
+              <div className="flex items-center justify-center px-5 py-16 max-sm:px-0">
                 <div className="w-full max-w-lg rounded-3xl bg-white px-5 py-8 sm:px-10 md:px-12">
                   <div className="mb-7">
                     <h2 className="font-sora text-2xl font-semibold text-navy">Request a conversation</h2>
