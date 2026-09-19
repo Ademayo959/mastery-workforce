@@ -310,7 +310,7 @@ export default function Home() {
               <div className="grid gap-3 mt-4">
                 <div className="flex gap-2 items-center">
                   <div className="flex items-center justify-center rounded-md bg-white border border-navy/20 w-10 h-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-navy">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
                     </svg>
                   </div>
@@ -321,7 +321,7 @@ export default function Home() {
                 </div>
                 <div className="flex gap-2 items-center">
                   <div className="flex items-center justify-center rounded-md bg-white border border-navy/20 w-10 h-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-navy">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
                     </svg>
                   </div>
@@ -332,7 +332,7 @@ export default function Home() {
                 </div>
                 <div className="flex gap-2 items-center">
                   <div className="flex items-center justify-center rounded-md bg-white border border-navy/20 w-10 h-10">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5 text-navy">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                       <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
                     </svg>
@@ -358,7 +358,7 @@ export default function Home() {
                     {/* Full Name + Company Name */}
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="fullName" className="mb-2 block text-sm font-medium text-navy">Full Name *</label>
+                        <label htmlFor="fullName" className="mb-2 block font-sora text-sm font-medium text-navy">Full Name *</label>
                         <input
                           id="fullName"
                           type="text"
@@ -367,19 +367,19 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <label htmlFor="company" className="mb-2 block text-sm font-medium text-navy"> Company Name * </label>
+                        <label htmlFor="company" className="mb-2 block font-sora text-sm font-medium text-navy"> Company Name * </label>
                         <input
                           id="company"
                           type="text"
                           placeholder="Acme Group Ltd."
-                          className="h-[38px] w-full rounded-lg border border-nvy/10 bg-skyblue/20 px-4 text-sm text-navy outline-none placeholder:text-navy/55 focus:border-navy/30 focus:bg-white"
+                          className="h-[38px] w-full rounded-lg border border-navy/10 bg-skyblue/20 px-4 text-sm text-navy outline-none placeholder:text-navy/55 focus:border-navy/30 focus:bg-white"
                         />
                       </div>
                     </div>
                     {/* Email + Phone */}
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div>
-                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-navy">Email *</label>
+                        <label htmlFor="email" className="mb-2 block font-sora text-sm font-medium text-navy">Email *</label>
                         <input
                           id="email"
                           type="email"
@@ -388,7 +388,7 @@ export default function Home() {
                         />
                       </div>
                       <div>
-                        <label htmlFor="phone" className="mb-2 block text-sm font-medium text-navy">Phone</label>
+                        <label htmlFor="phone" className="mb-2 block font-sora text-sm font-medium text-navy">Phone</label>
                         <input
                           id="phone"
                           type="tel"
@@ -399,7 +399,7 @@ export default function Home() {
                     </div>
                     {/* Interested In */}
                     <div>
-                      <label htmlFor="interest" className="mb-2 block text-sm font-medium text-navy">I'm interested in *</label>
+                      <label htmlFor="interest" className="mb-2 block text-sm font-sora font-medium text-navy">I'm interested in *</label>
                       <div className="relative">
                         <select id="interest" className="h-[38px] w-full appearance-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 pr-12 text-sm text-navy outline-none focus:border-navy/30 focus:bg-white">
                           <option value="">Talent Search</option>
@@ -416,7 +416,7 @@ export default function Home() {
                     </div>
                     {/* Message */}
                     <div>
-                      <label htmlFor="message" className="mb-2 block text-sm font-medium text-navy">Message *</label>
+                      <label htmlFor="message" className="mb-2 block font-sora text-sm font-medium text-navy">Message *</label>
                       <textarea id="message" rows={5} placeholder="Tell us about your hiring goals, team size, and timelines..."
                         className="w-full resize-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 py-4 text-sm text-navy outline-none placeholder:text-navy/55 focus:border-navy/30 focus:bg-white"
                       />
