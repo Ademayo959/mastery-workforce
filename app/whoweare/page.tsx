@@ -37,20 +37,24 @@ export default function page() {
             </div>
           </div>
           {/* Right Column: Image & Floating Card */}
-          <div className="relative w-full h-[600px] order-2 mt-0 max-lg:order-1 max-lg:h-[500px] max-lg:mt-10 max-sm:h-[400px]">
+          <div className="relative w-full h-[600px] order-2 mt-0 max-lg:order-1 max-lg:h-auto max-lg:mt-10">
             {/* Decorative Skyblue Shape */}
             <div className="absolute top-[-20px] right-[-20px] w-[25%] h-[25%] bg-skyblue rounded-3xl -z-1 block max-sm:hidden"></div>
+
             {/* Main Image */}
-            <div className="relative w-fit h-[70%] rounded-2xl overflow-hidden shadow-md z-1">
+            <div className="relative w-full lg:w-fit h-[400px] lg:h-[70%] rounded-2xl overflow-hidden shadow-md z-1 max-sm:h-[300px]">
               <Image
                 src={hero} // Replace with your actual image import
                 alt="Team of professionals collaborating"
                 className="w-full h-full object-cover"
               />
             </div>
+
             {/* Floating Overlay Card */}
-            <div className="absolute -mt-15 -ml-15 bg-white p-8 rounded-2xl shadow-lg max-w-[320px] z-10 max-sm:left-[-10px] max-sm:p-6">
-              <p className="font-sora text-navy text-[1.2rem] leading-[1.3] font-bold mb-3">People and possibility, connected with purpose.</p>
+            <div className="relative -mt-6 ml-0 bg-white p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-[320px] z-10 lg:absolute lg:-mt-15 lg:-ml-15">
+              <p className="font-sora text-navy text-[1.2rem] leading-[1.3] font-bold mb-3">
+                People and possibility, connected with purpose.
+              </p>
               <p className="text-navy/70 font-inter text-sm leading-6">
                 Because work shapes lives, teams and the communities around them.
               </p>
@@ -60,26 +64,26 @@ export default function page() {
       </div>
       {/**OUR STORY SECTION */}
       <div className="bg-white border-y border-navy/20">
-        <div className="max-w-4xl mx-auto py-18">
+        <div className="max-w-4xl mx-auto py-18 max-sm:py-12 max-sm:px-5">
           <div>
             <p className="font-sora text-navy/70 text-[12px] tracking-wider mb-3">OUR STORY</p>
-            <p className="font-sora font-semibold w-130 leading-8 text-[1.4rem] sm:text-[2rem] text-navy">More than a recruitment agency - a workforce partner.</p>
+            <p className="font-sora font-semibold max-w-130 leading-8 text-[1.4rem] sm:text-[2rem] text-navy max-sm:text-[1.2rem] max-sm:leading-7">More than a recruitment agency - a workforce partner.</p>
           </div>
           <div className="mt-4">
-            <p className="font-sora text-navy text-[1rem] my-4">Mastery Workforce PEO Limited is a recruitment and human resources specialist built on a straightforward conviction: talent and opportunity should not be constrained by convention. Our work begins with understanding the people, businesses and ambitions behind every engagement. We look beyond the immediate brief to understand what our clients are trying to achieve, the capabilities required to achieve it, and the people who can make that ambition a reality. This approach allows us to create meaningful opportunities for our clients, candidates, colleagues, partners and the wider communities in which we operate.</p>
-            <p className="font-sora text-navy text-[1rem] my-4">Mastery has developed a range of complementary business lines that bring together expertise in Training, Advisory, Outsourcing and Talent Search. Through these capabilities, we support organisations across the continent in identifying and securing critical talent, developing their people, navigating complex workforce and business challenges, and accessing the specialist support required to operate and grow effectively.</p>
+            <p className="font-sora text-navy text-[1rem] my-4 max-sm:text-[0.95rem]">Mastery Workforce PEO Limited is a recruitment and human resources specialist built on a straightforward conviction: talent and opportunity should not be constrained by convention. Our work begins with understanding the people, businesses and ambitions behind every engagement. We look beyond the immediate brief to understand what our clients are trying to achieve, the capabilities required to achieve it, and the people who can make that ambition a reality. This approach allows us to create meaningful opportunities for our clients, candidates, colleagues, partners and the wider communities in which we operate.</p>
+            <p className="font-sora text-navy text-[1rem] my-4 max-sm:text-[0.95rem]">Mastery has developed a range of complementary business lines that bring together expertise in Training, Advisory, Outsourcing and Talent Search. Through these capabilities, we support organisations across the continent in identifying and securing critical talent, developing their people, navigating complex workforce and business challenges, and accessing the specialist support required to operate and grow effectively.</p>
           </div>
-          <div className="bg-skyblue/30 px-10 py-8 grid gap-2 grid-cols-[10%_90%] my-10 rounded-lg">
+          <div className="bg-skyblue/30 px-10 py-8 grid gap-2 grid-cols-[10%_90%] my-10 rounded-lg max-sm:px-5 max-sm:py-6 max-sm:grid-cols-1 max-sm:gap-4">
             <div>
               <svg xmlns="http://www.w3.org/2000/svg" className="text-navy" width={70} height={70} fill={"currentColor"} viewBox={"0 0 24 24"}>{/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}<path d="M3 14h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2m0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1H3zm12 8h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1h-5V6Z"></path></svg>
             </div>
             <div>
-              <p className="font-sora text-[1.8rem] text-navy w-[85%]">We work alongside people and businesses to turn workforce ambition into enduring progress</p>
+              <p className="font-sora text-[1.8rem] text-navy w-[85%] max-sm:text-[1.3rem] max-sm:w-full">We work alongside people and businesses to turn workforce ambition into enduring progress</p>
             </div>
           </div>
           <div className="mt-4">
-            <p className="font-sora text-navy text-[1rem] my-4">Our understanding of the African market is central to what we do. We recognise that organisations operating in the region face a distinctive combination of talent, regulatory, commercial and operational challenges. We therefore combine market knowledge with practical expertise to provide solutions that are relevant to the realities of the businesses we serve. We are more than a recruitment agency. We are a workforce partner, working alongside our clients beyond the point of recruitment to help them build capable teams, strengthen their organisations and respond effectively to changing business demands.</p>
-            <p className="font-sora text-navy text-[1rem] my-4">At Mastery, our objective is simple: to connect the right people, knowledge and opportunities in ways that create lasting value for the organisations and individuals we serve.</p>
+            <p className="font-sora text-navy text-[1rem] my-4 max-sm:text-[0.95rem]">Our understanding of the African market is central to what we do. We recognise that organisations operating in the region face a distinctive combination of talent, regulatory, commercial and operational challenges. We therefore combine market knowledge with practical expertise to provide solutions that are relevant to the realities of the businesses we serve. We are more than a recruitment agency. We are a workforce partner, working alongside our clients beyond the point of recruitment to help them build capable teams, strengthen their organisations and respond effectively to changing business demands.</p>
+            <p className="font-sora text-navy text-[1rem] my-4 max-sm:text-[0.95rem]">At Mastery, our objective is simple: to connect the right people, knowledge and opportunities in ways that create lasting value for the organisations and individuals we serve.</p>
           </div>
         </div>
       </div>
@@ -173,7 +177,7 @@ export default function page() {
       </div>
       {/**WHO WE SERVE SECTION */}
       <div className="border-y border-navy/20">
-        <div className="mx-auto max-w-7xl py-18">
+        <div className="mx-auto max-w-7xl py-18 max-sm:px-3">
           <div>
             <p className="font-sora text-navy/70 text-[12px] tracking-wider">WHO WE SERVE</p>
             <div className="leading-10">
@@ -240,7 +244,7 @@ export default function page() {
       </div>
       {/**OUR VISION & MISSION SECTION */}
       <div>
-        <div className="max-w-7xl mx-auto py-18 px-0">
+        <div className="max-w-7xl mx-auto py-18 px-2">
           <div className="bg-skyblue rounded-3xl p-12 lg:p-16 grid grid-cols-2 gap-16 max-lg:grid-cols-1 max-lg:gap-12 max-lg:p-10 max-sm:p-8">
             {/* Left Column: Mission */}
             <div className="flex flex-col pr-4">

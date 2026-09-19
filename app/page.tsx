@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import hero from "@/assets/hero.jpeg"
 import hero2 from "@/assets/hero2.webp"
 import hero3 from "@/assets/hero3.jpeg"
@@ -32,12 +33,12 @@ export default function Home() {
               </p>
               {/* Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-                <div className="py-2.5 px-5 border border-navy/10 text-center">
+                <Link href="/solutions" className="py-2.5 px-5 border border-navy/10 text-center">
                   <p className="text-navy text-sm sm:text-base font-sora">Explore our Solutions</p>
-                </div>
-                <div className="bg-navy py-2.5 px-5 text-white text-center">
+                </Link>
+                <Link href="/contact" className="bg-navy py-2.5 px-5 text-white text-center">
                   <p className="text-sm sm:text-base font-sora">Get in Touch</p>
-                </div>
+                </Link>
               </div>
               {/* Trusted */}
               <div className="flex gap-2 items-center my-8">
