@@ -53,7 +53,7 @@ export default function Navbar() {
             <Link href="/contact" className="hover:-mt-1 transition-all">Contact</Link>
           </div>
           <div>
-            <p className="hover:-mt-1 transition-all">Candidates</p>
+            <Link href="/candidates" className="hover:-mt-1 transition-all">Candidates</Link>
           </div>
         </div>
         {/* DESKTOP BUTTONS */}
