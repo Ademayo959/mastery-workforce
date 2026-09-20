@@ -185,9 +185,9 @@ export default function Home() {
             </div>
           </div>
           <div>
-            <div className="bg-navy text-white py-2 px-4 w-fit justify-self-center mt-12">
+            <Link href="solutions" className="bg-navy text-white py-2 px-4 w-fit justify-self-center mt-12">
               <p>See All Solutions</p>
-            </div>
+            </Link>
           </div>
         </div>
       </div>

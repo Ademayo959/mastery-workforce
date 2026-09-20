@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar"
+import Link from "next/link"
 import hero from "@/assets/hero.jpeg"
 import Image from "next/image"
 import Footer from "@/components/Footer"
@@ -31,9 +32,9 @@ export default function page() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
                 </svg>
               </button>
-              <button className="font-sora font-semibold bg-white text-navy px-7 py-3.5 rounded-lg border border-slate-200 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md">
+              <Link href="/contact" className="font-sora font-semibold bg-white text-navy px-7 py-3.5 rounded-lg border border-slate-200 shadow-sm transition-transform hover:-translate-y-0.5 hover:shadow-md">
                 Talk to an expert
-              </button>
+              </Link>
             </div>
           </div>
           {/* Right Column: Image & Floating Card */}
@@ -299,14 +300,14 @@ export default function page() {
             </div>
             {/* Right Column: Button */}
             <div className="shrink-0 mt-4 lg:mt-0">
-              <button className="font-sora font-semibold flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-lg max-sm:px-6 max-sm:py-3.5">
+              <Link href="/contact" className="font-sora font-semibold flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-lg max-sm:px-6 max-sm:py-3.5">
                 Get in touch
                 {/* Add your arrow up-right icon here */}
                 <span className="text-lg leading-none"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.0} stroke="currentColor" className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
                 </span>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
