@@ -1,6 +1,10 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import hero from "@/assets/hero.jpeg"
+import { useState } from "react";
+import toast from "react-hot-toast";
 import hero2 from "@/assets/hero2.webp"
 import hero3 from "@/assets/hero3.jpeg"
 import intro from "@/assets/intro.jpeg"
@@ -8,6 +12,52 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function Home() {
+
+  //loading state
+  const [isLoading, setIsLoading] = useState(false)
+  //feedback state
+  const [feedback, setFeedback] = useState("")
+
+  const [fullName, setFullName] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [email, setEmail] = useState("")
+  const [number, setNumber] = useState("")
+  const [interest, setInterest] = useState("")
+  const [message, setMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      setIsLoading(true)
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          companyName,
+          email,
+          number,
+          interest,
+          message
+        }),
+      });
+      let data = await response.json()
+      if (data.success) {
+        toast.success("Your Message has been sent successfully")
+        setFeedback("Your Message has been sent successfully")
+      } else {
+        toast.error("Something went wrong, please try again")
+        setFeedback("Something went wrong, please try again")
+      }
+    } catch (err) {
+      console.log(err)
+      toast.error("Something went wrong, please try again")
+      setFeedback("Something went wrong, please try again")
+    }
+    setIsLoading(false)
+  };
+
   return (
     <div className="bg-skyblue/10">
       <Navbar />
@@ -355,12 +405,14 @@ export default function Home() {
                       Fields marked * are required. We reply within one business day.
                     </p>
                   </div>
-                  <form className="space-y-3">
+                  <form onSubmit={handleSubmit} className="space-y-3">
                     {/* Full Name + Company Name */}
                     <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
                       <div>
                         <label htmlFor="fullName" className="mb-2 block font-sora text-sm font-medium text-navy">Full Name *</label>
                         <input
+                          value={fullName}
+                          onChange={(e) => { setFullName(e.target.value) }}
                           id="fullName"
                           type="text"
                           placeholder="Adaeze Okafor"
@@ -370,6 +422,8 @@ export default function Home() {
                       <div>
                         <label htmlFor="company" className="mb-2 block font-sora text-sm font-medium text-navy"> Company Name * </label>
                         <input
+                          value={companyName}
+                          onChange={(e) => { setCompanyName(e.target.value) }}
                           id="company"
                           type="text"
                           placeholder="Acme Group Ltd."
@@ -382,6 +436,8 @@ export default function Home() {
                       <div>
                         <label htmlFor="email" className="mb-2 block font-sora text-sm font-medium text-navy">Email *</label>
                         <input
+                          value={email}
+                          onChange={(e) => { setEmail(e.target.value) }}
                           id="email"
                           type="email"
                           placeholder="you@company.com"
@@ -391,6 +447,8 @@ export default function Home() {
                       <div>
                         <label htmlFor="phone" className="mb-2 block font-sora text-sm font-medium text-navy">Phone</label>
                         <input
+                          value={number}
+                          onChange={(e) => { setNumber(e.target.value) }}
                           id="phone"
                           type="tel"
                           placeholder="+234 ..."
@@ -402,7 +460,8 @@ export default function Home() {
                     <div>
                       <label htmlFor="interest" className="mb-2 block text-sm font-sora font-medium text-navy">I'm interested in *</label>
                       <div className="relative">
-                        <select id="interest" className="h-[38px] w-full appearance-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 pr-12 text-sm text-navy outline-none focus:border-navy/30 focus:bg-white">
+                        <select value={interest}
+                          onChange={(e) => { setInterest(e.target.value) }} id="interest" className="h-[38px] w-full appearance-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 pr-12 text-sm text-navy outline-none focus:border-navy/30 focus:bg-white">
                           <option value="">Talent Search</option>
                           <option value="talent">Talent Search</option>
                           <option value="outsourcing">Outsourcing</option>
@@ -418,13 +477,14 @@ export default function Home() {
                     {/* Message */}
                     <div>
                       <label htmlFor="message" className="mb-2 block font-sora text-sm font-medium text-navy">Message *</label>
-                      <textarea id="message" rows={5} placeholder="Tell us about your hiring goals, team size, and timelines..."
+                      <textarea value={message}
+                        onChange={(e) => { setMessage(e.target.value) }} id="message" rows={5} placeholder="Tell us about your hiring goals, team size, and timelines..."
                         className="w-full resize-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 py-4 text-sm text-navy outline-none placeholder:text-navy/55 focus:border-navy/30 focus:bg-white"
                       />
                     </div>
                     {/* Button */}
                     <button type="submit" className="h-[38px] w-full rounded-lg bg-navy text-base font-semibold text-white transition hover:bg-navy/90">
-                      Get in Touch
+                      {isLoading ? <p>Loading...</p> : <p>Get in Touch</p> }
                     </button>
                     {/* Disclaimer */}
                     <p className="pt-1 text-center text-xs text-navy/60">

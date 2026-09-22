@@ -1,7 +1,57 @@
+"use client";
+
+import { useState } from "react";
 import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
+import Link from "next/link";
+import toast from "react-hot-toast";
 
 export default function page() {
+  //loading state
+  const [isLoading, setIsLoading] = useState(false)
+  //feedback state
+  const [feedback, setFeedback] = useState("")
+
+  const [fullName, setFullName] = useState("")
+  const [companyName, setCompanyName] = useState("")
+  const [email, setEmail] = useState("")
+  const [number, setNumber] = useState("")
+  const [interest, setInterest] = useState("")
+  const [message, setMessage] = useState("")
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    try {
+      setIsLoading(true)
+
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          companyName,
+          email,
+          number,
+          interest,
+          message
+        }),
+      });
+      let data = await response.json()
+      if (data.success) {
+        toast.success("Your Message has been sent successfully")
+        setFeedback("Your Message has been sent successfully")
+      } else {
+        toast.error("Something went wrong, please try again")
+        setFeedback("Something went wrong, please try again")
+      }
+    } catch (err) {
+      console.log(err)
+      toast.error("Something went wrong, please try again")
+      setFeedback("Something went wrong, please try again")
+    }
+    setIsLoading(false)
+  };
+
   return (
     <div>
       <Navbar />
@@ -37,37 +87,33 @@ export default function page() {
             <p className="text-navy/70 font-inter text-[1.05rem] leading-7 mb-8 max-w-xl">
               Fill in the form below, or reach us directly, and a member of our team will respond promptly.
             </p>
-            <form className="flex flex-col gap-6">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-6">
               {/* Row 1: Name and Company */}
               <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="name" className="font-sora text-navy font-semibold text-sm">Full Name</label>
-                  <input type="text" id="name" placeholder="Your full name" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
+                  <input value={fullName} onChange={(e) => { setFullName(e.target.value) }} type="text" id="name" placeholder="Your full name" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="company" className="font-sora text-navy font-semibold text-sm">Company Name</label>
-                  <input type="text" id="company" placeholder="Your organisation" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
+                  <input value={companyName} onChange={(e) => { setCompanyName(e.target.value) }} type="text" id="company" placeholder="Your organisation" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
                 </div>
               </div>
               {/* Row 2: Email and Phone */}
               <div className="grid grid-cols-2 gap-6 max-sm:grid-cols-1">
                 <div className="flex flex-col gap-2">
                   <label htmlFor="email" className="font-sora text-navy font-semibold text-sm">Email Address</label>
-                  <input type="email" id="email" placeholder="you@company.com" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
+                  <input value={email} onChange={(e) => { setEmail(e.target.value) }} type="email" id="email" placeholder="you@company.com" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
                 </div>
                 <div className="flex flex-col gap-2">
                   <label htmlFor="phone" className="font-sora text-navy font-semibold text-sm">Phone Number</label>
-                  <input type="tel" id="phone" placeholder="Include country code" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
+                  <input value={number} onChange={(e) => { setNumber(e.target.value) }} type="tel" id="phone" placeholder="Include country code" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all" />
                 </div>
               </div>
               {/* Row 3: Service Dropdown */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="service" className="font-sora text-navy font-semibold text-sm">I'm interested in</label>
-                <select
-                  id="service"
-                  defaultValue=""
-                  className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all appearance-none"
-                >
+                <select value={interest} onChange={(e) => { setInterest(e.target.value) }} id="service" defaultValue="" className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all appearance-none">
                   <option value="" disabled>Select a service</option>
                   <option value="trainings">Trainings</option>
                   <option value="advisory">Advisory</option>
@@ -78,19 +124,22 @@ export default function page() {
               {/* Row 4: Message */}
               <div className="flex flex-col gap-2">
                 <label htmlFor="message" className="font-sora text-navy font-semibold text-sm">Message</label>
-                <textarea id="message" rows={5} placeholder="Tell us a little about what you need support with." className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all resize-none"></textarea>
+                <textarea value={message} onChange={(e) => { setMessage(e.target.value) }} id="message" rows={5} placeholder="Tell us a little about what you need support with." className="font-inter w-full px-4 py-3 rounded-lg border border-slate-200 bg-[#F4F7F9] text-navy placeholder:text-navy/40 focus:outline-none focus:ring-2 focus:ring-skyblue focus:border-transparent transition-all resize-none"></textarea>
               </div>
               {/* Form Footer */}
               <div className="flex items-center gap-6 mt-4 max-sm:flex-col max-sm:items-start">
                 <button type="submit" className="cursor-pointer font-sora font-semibold flex items-center gap-2 bg-navy text-white px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-lg max-sm:w-full justify-center">
-                  Send Message
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white h-5 w-5">
+                  {isLoading ? <p>Loading...</p> : <div className="flex gap-2 items-center"><p>Send Message</p> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-white h-5 w-5">
                     <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
-                  </svg>
+                  </svg></div>}
+                  
                 </button>
-                <p className="text-navy/50 font-inter text-xs max-w-[250px]">
+                <div>
+                  <p className="text-navy/50 font-inter text-xs max-w-[250px]">
                   We'll treat your details with care and only use them to respond to your enquiry.
                 </p>
+                <p className="font-sora text-navy">{feedback}</p>
+                </div>
               </div>
             </form>
           </div>
@@ -158,12 +207,12 @@ export default function page() {
               </p>
             </div>
             <div className="shrink-0 mt-4 lg:mt-0">
-              <button className="font-sora cursor-pointer font-semibold flex items-center gap-3 bg-white text-navy border border-slate-300 px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-md max-sm:px-6 max-sm:py-3.5 max-sm:w-full justify-center">
+              <Link href="/" className="font-sora cursor-pointer font-semibold flex items-center gap-3 bg-white text-navy border border-slate-300 px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-md max-sm:px-6 max-sm:py-3.5 max-sm:w-full justify-center">
                 Meet Mastery Workforce
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-navy h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
