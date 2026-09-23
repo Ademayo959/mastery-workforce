@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import { easeInOut, motion } from "motion/react";
+import { type Variants } from "motion/react";
 import Link from "next/link";
 import hero from "@/assets/hero.jpeg"
 import { useState } from "react";
@@ -57,12 +59,24 @@ export default function Home() {
     }
     setIsLoading(false)
   };
+  //animation variables
+  const container = {
+    hidden: {},
+    visible: {
+      transition: { staggerChildren: 0.15 }, // 0.15s gap between each card
+    },
+  };
+
+  const card: Variants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
   return (
     <div className="bg-skyblue/10">
       <Navbar />
       {/**Hero Section */}
-      <div className="max-w-7xl mx-auto mt-12 sm:mt-16 lg:mt-20 px-5 lg:px-0">
+      <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: easeInOut }} className="max-w-7xl mx-auto mt-12 sm:mt-16 lg:mt-20 px-5 lg:px-0">
         <div className="flex flex-col lg:flex-row lg:justify-between gap-14 lg:gap-20">
           {/* LEFT SIDE */}
           <div className="w-full lg:w-auto">
@@ -136,14 +150,20 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
       {/**Intro & Value Statement section */}
       <div className="max-w-7xl mx-auto pb-18 px-5 lg:px-0">
         <div className="grid grid-cols-1 lg:grid-cols-2 mt-16 sm:mt-20 lg:mt-30 gap-10 lg:gap-0">
-          <div className="px-0 lg:px-8 max-sm:hidden">
+          <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }} className="px-0 lg:px-8 max-sm:hidden">
             <Image src={intro} alt="corporate office pic" className="rounded-2xl z-1 shadow-md w-full h-[350px] sm:h-[450px] lg:h-120 object-cover" />
-          </div>
-          <div className="px-0 lg:px-6">
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.7 }} className="px-0 lg:px-6">
             <div className="flex gap-2 items-center mt-0 lg:mt-10 mb-4">
               <div className="bg-yellow-600 h-[2px] w-10"></div>
               <p className="font-sora text-navy/70 text-[12px] tracking-wider">OUR COMMITMENT</p>
@@ -161,7 +181,7 @@ export default function Home() {
               cutting-edge advice, and get the innovative support they require to
               grow in a challenging market.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
       {/**Solutions Section */}
@@ -176,8 +196,11 @@ export default function Home() {
               <p className="text-navy/70 w-full lg:w-80">Tailored HR and workforce solutions built around what your business actually needs.</p>
             </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 my-8">
-            <div className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
+          <motion.div variants={container}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-10 my-8">
+            <motion.div variants={card} className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
               <div className="bg-skyblue text-navy p-2 w-fit rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-1.5" />
@@ -190,8 +213,8 @@ export default function Home() {
                   <p className="text-navy font-sora mt-2">Learn More</p>
                 </div>
               </div>
-            </div>
-            <div className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
+            </motion.div>
+            <motion.div variants={card} className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
               <div className="bg-skyblue text-navy p-2 w-fit rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 14.15v4.25c0 1.094-.787 2.036-1.872 2.18-2.087.277-4.216.42-6.378.42s-4.291-.143-6.378-.42c-1.085-.144-1.872-1.086-1.872-2.18v-4.25m16.5 0a2.18 2.18 0 0 0 .75-1.661V8.706c0-1.081-.768-2.015-1.837-2.175a48.114 48.114 0 0 0-3.413-.387m4.5 8.006c-.194.165-.42.295-.673.38A23.978 23.978 0 0 1 12 15.75c-2.648 0-5.195-.429-7.577-1.22a2.016 2.016 0 0 1-.673-.38m0 0A2.18 2.18 0 0 1 3 12.489V8.706c0-1.081.768-2.015 1.837-2.175a48.111 48.111 0 0 1 3.413-.387m7.5 0V5.25A2.25 2.25 0 0 0 13.5 3h-3a2.25 2.25 0 0 0-2.25 2.25v.894m7.5 0a48.667 48.667 0 0 0-7.5 0M12 12.75h.008v.008H12v-.008Z" />
@@ -204,8 +227,8 @@ export default function Home() {
                   <p className="text-navy font-sora mt-2">Learn More</p>
                 </div>
               </div>
-            </div>
-            <div className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
+            </motion.div>
+            <motion.div variants={card} className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
               <div className="bg-skyblue text-navy p-2 w-fit rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
@@ -218,8 +241,8 @@ export default function Home() {
                   <p className="text-navy font-sora mt-2">Learn More</p>
                 </div>
               </div>
-            </div>
-            <div className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
+            </motion.div>
+            <motion.div variants={card} className="border border-navy/20 py-6 w-full px-6 rounded-md bg-white shadow-sm">
               <div className="bg-skyblue text-navy p-2 w-fit rounded-md">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
@@ -232,11 +255,11 @@ export default function Home() {
                   <p className="text-navy font-sora mt-2">Learn More</p>
                 </div>
               </div>
-            </div>
-          </div>
-          <div>
-            <Link href="solutions" className="bg-navy text-white py-2 px-4 w-fit justify-self-center mt-12">
-              <p>See All Solutions</p>
+            </motion.div>
+          </motion.div>
+          <div className="flex justify-center mt-12">
+            <Link href="/solutions" className="bg-navy text-white py-3 px-5">
+              See All Solutions
             </Link>
           </div>
         </div>
@@ -245,7 +268,10 @@ export default function Home() {
       <div>
         <div className="max-w-7xl mx-auto py-18 px-5 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12">
-            <div>
+            <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }} >
               <p className="font-sora text-navy/70 text-[12px] tracking-wider">
                 WHY MASTERY WORKFORCE
               </p>
@@ -279,8 +305,11 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.8 }} >
               <div className="flex gap-4 items-center border-b border-navy/20 pb-4">
                 <div className="p-2 rounded-full text-navy bg-skyblue/30 w-fit shrink-0">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
@@ -338,7 +367,7 @@ export default function Home() {
                   <p className="text-navy/70 font-inter">A partner mindset — for clients, candidates, and community alike.</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
@@ -346,7 +375,10 @@ export default function Home() {
       <div className="bg-skyblue/20 border-y border-navy/10">
         <div className="max-w-7xl mx-auto py-12 sm:py-16 px-5 lg:px-0">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-0">
-            <div>
+            <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut" }}>
               <div className="flex gap-2 items-center mt-0 lg:mt-10">
                 <div className="bg-skyblue h-[2px] w-10"></div>
                 <p className="font-sora text-navy text-[14px] fomt-bold">GET IN TOUCH</p>
@@ -395,8 +427,11 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div>
+            </motion.div>
+            <motion.div initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut",delay: 0.5 }}>
               <div className="flex items-center justify-center px-5 py-16 max-sm:px-0">
                 <div className="w-full max-w-lg rounded-3xl bg-white px-5 py-8 sm:px-10 md:px-12">
                   <div className="mb-7">
@@ -484,7 +519,7 @@ export default function Home() {
                     </div>
                     {/* Button */}
                     <button type="submit" className="h-[38px] w-full rounded-lg bg-navy text-base font-semibold text-white transition hover:bg-navy/90">
-                      {isLoading ? <p>Loading...</p> : <p>Get in Touch</p> }
+                      {isLoading ? <p>Loading...</p> : <p>Get in Touch</p>}
                     </button>
                     {/* Disclaimer */}
                     <p className="pt-1 text-center text-xs text-navy/60">
@@ -493,7 +528,7 @@ export default function Home() {
                   </form>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

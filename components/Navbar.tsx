@@ -1,9 +1,10 @@
 import Link from "next/link"
+import { motion } from "motion/react"
 
 export default function Navbar() {
   return (
     <div className="w-full border-b border-gray-200">
-      <div className="max-w-7xl mx-auto py-5 px-5 lg:px-0 flex items-center justify-between">
+      <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut" }} className="max-w-7xl mx-auto py-5 px-5 lg:px-0 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="leading-3">
           <p className="font-sora text-navy text-xl sm:text-2xl">Mastery Workforce</p>
@@ -97,7 +98,7 @@ export default function Navbar() {
             </div>
           </div>
         </details>
-      </div>
+      </motion.div>
     </div>
   )
 };
