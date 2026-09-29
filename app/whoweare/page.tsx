@@ -11,7 +11,6 @@ export default function page() {
       {/**Hero section */}
       <div className="max-w-7xl mx-auto pb-12 px-0 ">
         <div className="grid grid-cols-2 mt-20 gap-12 items-center max-lg:grid-cols-1 max-lg:gap-10 max-sm:mt-20 max-sm:px-5">
-          {/* Left Column: Text Content */}
           <div className="px-8 order-1 max-lg:order-2">
             <div className="flex gap-2 items-center mt-0 mb-4 max-lg:mt-0">
               <div className="bg-skyblue h-[2px] w-10"></div>
@@ -27,7 +26,6 @@ export default function page() {
             <div className="flex flex-wrap gap-4 mt-8">
               <button className="font-sora font-semibold flex items-center gap-2 bg-navy text-white px-7 py-3.5 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-lg">
                 Our story
-                {/* Add your icon here */}
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.0} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
                 </svg>
@@ -37,15 +35,11 @@ export default function page() {
               </Link>
             </div>
           </div>
-          {/* Right Column: Image & Floating Card */}
           <div className="relative w-full h-[600px] order-2 mt-0 max-lg:order-1 max-lg:h-auto max-lg:mt-10">
-            {/* Decorative Skyblue Shape */}
             <div className="absolute top-[-20px] right-[-20px] w-[25%] h-[25%] bg-skyblue rounded-3xl -z-1 block max-sm:hidden"></div>
-
-            {/* Main Image */}
             <div className="relative w-full lg:w-fit h-[400px] lg:h-[70%] rounded-2xl overflow-hidden shadow-md z-1 max-sm:h-[300px]">
               <Image
-                src={hero} // Replace with your actual image import
+                src={hero} 
                 alt="Team of professionals collaborating"
                 className="w-full h-full object-cover"
               />
@@ -92,7 +86,6 @@ export default function page() {
       <div>
         <div className="max-w-7xl mx-auto pb-18 px-0 ">
           <div className="grid grid-cols-2 mt-25 gap-0 items-start max-lg:grid-cols-1 max-lg:gap-12 max-sm:mt-20 max-sm:px-5">
-            {/* Left Column: Heading & Intro */}
             <div className="px-8 flex flex-col max-lg:px-0">
               <div className="flex gap-2 items-center mb-4">
                 <p className="font-sora text-navy/70 text-[12px] tracking-wider mb-1">OUR APPROACH</p>
@@ -108,7 +101,6 @@ export default function page() {
                 <p className="font-sora text-navy text-[1.05rem] font-semibold leading-relaxed">Care in the detail. Perspective in the partnership.</p>
               </div>
             </div>
-            {/* Right Column: Feature List */}
             <div className="flex flex-col border-t border-slate-300 max-lg:mt-8">
               {/* Item 1 */}
               <div className="flex gap-6 py-5 border-b border-slate-300 items-center">
@@ -288,7 +280,6 @@ export default function page() {
       <div>
         <div className="w-full bg-[#E5EDF3] py-24 max-lg:py-16 max-sm:py-12">
           <div className="max-w-7xl mx-auto px-8 flex justify-between items-center gap-10 max-lg:flex-col max-lg:items-start max-sm:px-5">
-            {/* Left Column: Text Content */}
             <div className="flex flex-col max-w-2xl">
               <p className="font-sora text-navy/70 text-[12px] tracking-wider uppercase font-semibold mb-4">Start a Conversation</p>
               <p className="font-sora text-navy text-[2.5rem] leading-[1.15] font-semibold mb-6 max-lg:text-[2.2rem] max-sm:text-[1.8rem]">
@@ -298,11 +289,9 @@ export default function page() {
                 Tell us where your organisation is heading. We will bring the perspective, people and practical support to help you move with confidence.
               </p>
             </div>
-            {/* Right Column: Button */}
             <div className="shrink-0 mt-4 lg:mt-0">
               <Link href="/contact" className="font-sora font-semibold flex items-center gap-3 bg-navy text-white px-8 py-4 rounded-lg transition-transform hover:-translate-y-0.5 hover:shadow-lg max-sm:px-6 max-sm:py-3.5">
                 Get in touch
-                {/* Add your arrow up-right icon here */}
                 <span className="text-lg leading-none"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.0} stroke="currentColor" className="h-5 w-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25" />
                 </svg>

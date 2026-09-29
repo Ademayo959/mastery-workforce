@@ -67,7 +67,7 @@ export default function page() {
           <p className="font-sora text-navy text-[4rem] leading-[1.1] font-bold mb-8 max-lg:text-[3rem] max-sm:text-[2.5rem]">
             Let's Talk
           </p>
-          {/* Highlighted Intro Text with Left Border */}
+          {/* Highlighted Intro Text */}
           <div className="border-l-[3px] border-[#B3D4E8] pl-6 max-w-3xl">
             <p className="font-sora text-navy text-[1.5rem] leading-[1.3] font-semibold max-sm:text-[1.2rem]">
               Whether you're looking for the right talent, expert advice, or a workforce partner who goes further than expected — we'd love to hear from you.
@@ -145,9 +145,7 @@ export default function page() {
           </div>
           {/* Right Column: Contact Info Box */}
           <div className="col-span-1 flex flex-col gap-6 max-lg:mt-10">
-            {/* Blue Info Box */}
             <div className="bg-[#B3D4E8] rounded-2xl p-8 flex flex-col">
-              {/* Icon and Heading on same line */}
               <div className="flex items-center gap-4 mb-6">
                 <div className="shrink-0 w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6 text-navy">
@@ -161,7 +159,7 @@ export default function page() {
               <p className="font-inter text-navy/80 text-[1rem] leading-7 mb-8">
                 Reach our team at <span className="font-semibold text-navy">[email address]</span> or <span className="font-semibold text-navy">[phone number]</span>. We're ready to help you find your next opportunity, your next hire, or your next solution.
               </p>
-              {/* Divider */}
+              {/* Dividing Line */}
               <div className="border-t border-white/40 mb-8"></div>
               {/* Direct Contact Details */}
               <div className="flex flex-col gap-5">

@@ -39,7 +39,6 @@ export default function page() {
               <p className="text-navy/70 font-inter text-[1.05rem] leading-7 mb-10 max-w-lg">
                 A capable workforce doesn't happen by accident. Our training solutions are designed to close skills gaps, sharpen performance, and prepare your people and your leaders for what's next. Whether you need to onboard new hires faster, upskill existing teams, or develop future leaders, we design and deliver training programmes rooted in real business outcomes, not just checkboxes.
               </p>
-              {/* Quote Box */}
               <div className="bg-[#E5EDF3] p-8 rounded-2xl max-w-lg flex gap-4">
                 <div className="shrink-0 w-6 h-6 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" className="text-navy" width={29} height={29} fill={"currentColor"} viewBox={"0 0 24 24"}>{/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}<path d="M3 14h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2m0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1H3zm12 8h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1h-5V6Z"></path></svg>
@@ -85,7 +84,7 @@ export default function page() {
                   </div>
                   <p className="font-sora text-navy font-semibold text-[0.95rem] leading-snug">Custom-built training curricula for specific business needs</p>
                 </div>
-                {/* Card 5 (Spans 2 columns) */}
+                {/* Card 5 (The big one) */}
                 <div className="bg-white border border-slate-200 p-5 rounded-xl flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow col-span-2 max-sm:col-span-1">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-[#E5EDF3] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-navy h-5 w-5">
@@ -107,7 +106,7 @@ export default function page() {
         {/* Section 02: Advisory */}
         <div id="advisory" className="w-full bg-[#E5EDF3] py-24 max-lg:py-16">
           <div className="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-20 items-start max-lg:grid-cols-1 max-lg:gap-12 max-sm:px-5">
-            {/* Left Column (Grid) */}
+            {/* Left Column */}
             <div className="flex flex-col order-2 lg:order-1">
               <p className="font-sora text-navy/60 text-[12px] tracking-wider uppercase font-semibold mb-6">What We Offer</p>
               <div className="grid grid-cols-2 gap-4 mb-8 max-sm:grid-cols-1">
@@ -143,7 +142,7 @@ export default function page() {
                   </div>
                   <p className="font-sora text-navy font-semibold text-[0.95rem] leading-snug">Compensation and benefits advisory</p>
                 </div>
-                {/* Card 5 (Spans 2 columns) */}
+                {/* Card 5 (The big one) */}
                 <div className="bg-white border border-slate-200 p-5 rounded-xl flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow col-span-2 max-sm:col-span-1">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-[#E5EDF3] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-navy h-5 w-5">
@@ -160,7 +159,7 @@ export default function page() {
                 </svg>
               </button>
             </div>
-            {/* Right Column (Text) */}
+            {/* Right Column */}
             <div className="flex flex-col pt-4 order-1 lg:order-2">
               <p className="font-sora text-navy/60 text-[12px] tracking-wider uppercase font-semibold mb-4">02 — Advisory</p>
               <p className="font-sora text-navy text-[2.5rem] leading-[1.15] font-bold mb-6 max-sm:text-[2rem]">
@@ -169,7 +168,6 @@ export default function page() {
               <p className="text-navy/70 font-inter text-[1.05rem] leading-7 mb-10 max-w-lg">
                 Good people decisions start with good advice. Our advisory service gives you access to seasoned HR and workforce experts who understand both the local market and global best practice, so you can make confident decisions about structure, policy, performance, and people strategy. We work alongside your leadership team as a trusted extension of your business, not an outside voice offering generic recommendations.
               </p>
-              {/* Quote Box */}
               <div className="bg-[#B3D4E8] p-8 rounded-2xl max-w-lg flex gap-4">
                 <div className="shrink-0 w-6 h-6 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" className="text-navy" width={29} height={29} fill={"currentColor"} viewBox={"0 0 24 24"}>{/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}<path d="M3 14h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2m0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1H3zm12 8h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1h-5V6Z"></path></svg>
@@ -191,7 +189,6 @@ export default function page() {
               <p className="text-navy/70 font-inter text-[1.05rem] leading-7 mb-10 max-w-lg">
                 Managing the operational side of HR and staffing can pull focus away from your core business. Our outsourcing solutions take that weight off your shoulders, handling everything from staffing and payroll administration to HR operations with the reliability and compliance your business needs.
               </p>
-              {/* Quote Box */}
               <div className="bg-[#E5EDF3] p-8 rounded-2xl max-w-lg flex gap-4">
                 <div className="shrink-0 w-6 h-6 mt-1">
                   <svg xmlns="http://www.w3.org/2000/svg" className="text-navy" width={29} height={29} fill={"currentColor"} viewBox={"0 0 24 24"}>{/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}<path d="M3 14h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2H3c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2m0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1H3zm12 8h2.85c-.27 1.02-1.01 2.51-3.1 3.03l-.76.19V20h1c2.78 0 4.91-.77 6.31-2.29 1.89-2.05 1.7-4.68 1.69-4.71V6c0-1.1-.9-2-2-2h-6c-1.1 0-2 .9-2 2v6c0 1.1.9 2 2 2Zm0-8h6v7.08s.12 1.9-1.18 3.29c-.48.52-1.11.91-1.87 1.19 1.56-1.42 2.04-3.4 2.04-4.56v-1h-5V6Z"></path></svg>
@@ -240,7 +237,7 @@ export default function page() {
                   </div>
                   <p className="font-sora text-navy font-semibold text-[0.95rem] leading-snug">Compliance and regulatory management</p>
                 </div>
-                {/* Card 5 (Spans 2 columns) */}
+                {/* Card 5 (The big one) */}
                 <div className="bg-white border border-slate-200 p-5 rounded-xl flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow col-span-2 max-sm:col-span-1">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-[#E5EDF3] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="text-navy h-5 w-5" width={24} height={24} fill={"currentColor"} viewBox={"0 0 24 24"}>{/* Boxicons v3.0.8 https://boxicons.com | License  https://docs.boxicons.com/free */}<path d="M12 2C6.49 2 2 6.49 2 12s4.49 10 10 10 10-4.49 10-10S17.51 2 12 2m0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8"></path><path d="M12.28 8.82 12 9.1l-.28-.28c-1.09-1.1-2.81-1.1-3.91 0a2.794 2.794 0 0 0 0 3.95L11.99 17l4.18-4.23a2.794 2.794 0 0 0 0-3.95 2.73 2.73 0 0 0-3.91 0Z"></path></svg>
@@ -260,7 +257,7 @@ export default function page() {
         {/* Section 04: Talent Search */}
         <div id="talent" className="w-full bg-[#E5EDF3] py-24 max-lg:py-16 border-b border-navy/10">
           <div className="max-w-7xl mx-auto px-8 grid grid-cols-2 gap-20 items-start max-lg:grid-cols-1 max-lg:gap-12 max-sm:px-5">
-            {/* Left Column (Grid) */}
+            {/* Left Column */}
             <div className="flex flex-col order-2 lg:order-1">
               <p className="font-sora text-navy/60 text-[12px] tracking-wider uppercase font-semibold mb-6">
                 What We Offer
@@ -298,7 +295,7 @@ export default function page() {
                   </div>
                   <p className="font-sora text-navy font-semibold text-[0.95rem] leading-snug">Confidential and succession searches</p>
                 </div>
-                {/* Card 5 (Spans 2 columns) */}
+                {/* Card 5 (The big one) */}
                 <div className="bg-white border border-slate-200 p-5 rounded-xl flex items-start gap-4 shadow-sm hover:shadow-md transition-shadow col-span-2 max-sm:col-span-1">
                   <div className="shrink-0 w-10 h-10 rounded-lg bg-[#E5EDF3] flex items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="text-navy h-5 w-5">

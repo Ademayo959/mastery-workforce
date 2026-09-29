@@ -63,7 +63,7 @@ export default function Home() {
   const container = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: 0.15 }, // 0.15s gap between each card
+      transition: { staggerChildren: 0.15 }, 
     },
   };
 
@@ -95,7 +95,6 @@ export default function Home() {
                 talent, access cutting-edge advice, and get the innovative support
                 they need to grow in a challenging market.
               </p>
-              {/* Buttons */}
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
                 <Link href="/solutions" className="py-2.5 px-5 border border-navy/10 text-center">
                   <p className="text-navy text-sm sm:text-base font-sora">Explore our Solutions</p>
@@ -491,7 +490,7 @@ export default function Home() {
                         />
                       </div>
                     </div>
-                    {/* Interested In */}
+                    {/* Interested In section*/}
                     <div>
                       <label htmlFor="interest" className="mb-2 block text-sm font-sora font-medium text-navy">I'm interested in *</label>
                       <div className="relative">
@@ -509,7 +508,6 @@ export default function Home() {
                         </svg>
                       </div>
                     </div>
-                    {/* Message */}
                     <div>
                       <label htmlFor="message" className="mb-2 block font-sora text-sm font-medium text-navy">Message *</label>
                       <textarea value={message}
@@ -517,11 +515,9 @@ export default function Home() {
                         className="w-full resize-none rounded-lg border border-navy/10 bg-skyblue/20 px-4 py-4 text-sm text-navy outline-none placeholder:text-navy/55 focus:border-navy/30 focus:bg-white"
                       />
                     </div>
-                    {/* Button */}
                     <button type="submit" className="h-[38px] w-full rounded-lg bg-navy text-base font-semibold text-white transition hover:bg-navy/90">
                       {isLoading ? <p>Loading...</p> : <p>Get in Touch</p>}
                     </button>
-                    {/* Disclaimer */}
                     <p className="pt-1 text-center text-xs text-navy/60">
                       By submitting, you agree to be contacted about our services.
                     </p>
