@@ -6,7 +6,7 @@ export async function POST(request: Request) {
     const formdata = await request.json()
 
     const result = await resend.emails.send({
-       from: 'onboarding@resend.dev',
+       from: 'Mastery Workforce <noreply@masteryworkforce.com>',
        to: 'contact@masteryworkforce.com',
        replyTo: formdata.email,
        subject: `New inquiry from ${formdata.fullName}`,
