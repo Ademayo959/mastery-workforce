@@ -398,7 +398,7 @@ export default function Home() {
                   </div>
                   <div>
                     <p className="text-navy/70 text-[0.8rem]">Email us</p>
-                    <p className="text-navy font-sora">info@masteryworkforce.com</p>
+                    <p className="text-navy font-sora">contact@masteryworkforce.com</p>
                   </div>
                 </div>
                 <div className="flex gap-2 items-center">

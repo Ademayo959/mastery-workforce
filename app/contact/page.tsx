@@ -157,7 +157,7 @@ export default function page() {
                 </p>
               </div>
               <p className="font-inter text-navy/80 text-[1rem] leading-7 mb-8">
-                Reach our team at <span className="font-semibold text-navy">[email address]</span> or <span className="font-semibold text-navy">[phone number]</span>. We're ready to help you find your next opportunity, your next hire, or your next solution.
+                Reach our team at <span className="font-semibold text-navy">contact@masteryworkforce.com</span> or <span className="font-semibold text-navy">[phone number]</span>. We're ready to help you find your next opportunity, your next hire, or your next solution.
               </p>
               {/* Dividing Line */}
               <div className="border-t border-white/40 mb-8"></div>
@@ -171,7 +171,7 @@ export default function page() {
                   </div>
                   <div>
                     <p className="font-sora text-navy/60 text-[11px] tracking-wider uppercase font-semibold">Email</p>
-                    <p className="font-inter text-navy font-semibold text-[0.95rem]">[email address]</p>
+                    <p className="font-inter text-navy font-semibold text-[0.95rem]">contact@masteryworkforce.com</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
